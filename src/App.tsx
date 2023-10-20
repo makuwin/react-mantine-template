@@ -6,12 +6,16 @@ import '@mantine/notifications/styles.css'
 
 import { MantineProvider } from '@mantine/core'
 import { ModalsProvider } from '@mantine/modals'
+import { Layout } from './components/ui/Layout'
+import RouteHandler from './components/ui/RouteHandler'
 
 export default function App() {
   return (
-    <MantineProvider>
+    <MantineProvider defaultColorScheme="auto">
       <ModalsProvider>
-        {/* Your app here */}
+        <Layout>
+          <RouteHandler />
+        </Layout>
       </ModalsProvider>
     </MantineProvider>
   )

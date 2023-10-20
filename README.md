@@ -15,3 +15,5 @@ npm install -D @tanstack/eslint-plugin-query
 npm install react-hook-form
 
 npm install react-router-dom
+
+npm install @tabler/icons-react
