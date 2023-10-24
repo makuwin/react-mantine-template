@@ -1,4 +1,4 @@
-import { Button, Modal, Text } from "@mantine/core";
+import { Button, Drawer, Modal, Space, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
@@ -20,6 +20,8 @@ export default function Inventory() {
 
   const [opened, { open, close }] = useDisclosure(false);
 
+  const [opened2, { open : open2, close : close2}] = useDisclosure(false);
+
   return (
     <>
       <Button
@@ -32,14 +34,24 @@ export default function Inventory() {
       >
         Show notification
       </Button>
-      
+      <Space h={'md'}/>
       <Button onClick={openModal}>Open confirm modal</Button>
-      
+      <Space h={'md'}/>
       <Modal opened={opened} onClose={close} title="Authentication" centered>
         {/* Modal content */}
       </Modal>
+      <Button onClick={open}>Open centered Modal</Button> 
+      <Space h={'md'}/>
+      <Drawer
+        opened={opened2}
+        onClose={close2}
+        title="Authentication"
+        overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+      >
+        {/* Drawer content */}
+      </Drawer>
 
-      <Button onClick={open}>Open centered Modal</Button>
+      <Button onClick={open2}>Open drawer</Button>
     </>
   )
 }
