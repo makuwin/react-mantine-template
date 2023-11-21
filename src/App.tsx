@@ -6,9 +6,9 @@ import { Notifications } from '@mantine/notifications'
 export default function App() {
   return (
     <MantineProvider defaultColorScheme="auto">
-        <Notifications />
+        <Notifications/>
         <ModalsProvider>
-          <RouteHandler />
+          <RouteHandler/>
         </ModalsProvider>
     </MantineProvider>
   )

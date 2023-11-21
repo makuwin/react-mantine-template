@@ -4,7 +4,7 @@ import { modals } from "@mantine/modals";
 import { notifications } from "@mantine/notifications";
 
 
-export default function Inventory() {
+const Inventory = () => {
   const openModal = () => modals.openConfirmModal({
     title: 'Please confirm your action',
     children: (
@@ -55,3 +55,5 @@ export default function Inventory() {
     </>
   )
 }
+
+export default Inventory

@@ -1,9 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from '../../pages'
-import Inventory from '../../pages/inventory'
-import MainLayout from '../../pages/MainLayout'
+import { Home, Inventory } from '../../pages'
+import { MainLayout } from '../../layouts/index'
 
-export default function RouteHandler() {
+const RouteHandler = () => {
   return (
     <>
       <Routes>
@@ -15,3 +14,5 @@ export default function RouteHandler() {
     </>
   )
 }
+
+export default RouteHandler

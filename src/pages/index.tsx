@@ -1,6 +1,2 @@
-
-export default function Home() {
-  return (
-    <div>This is Home Page</div>
-  )
-}
+export { default as Home } from "./Home"
+export { default as Inventory } from "./Inventory"
