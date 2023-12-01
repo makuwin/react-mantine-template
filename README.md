@@ -17,3 +17,9 @@ npm install react-hook-form
 npm install react-router-dom
 
 npm install @tabler/icons-react
+
+# For Tauri
+
+cargo tauri dev
+
+cargo tauri build
