@@ -1,26 +1,37 @@
-import { Card, Image, Text, Title } from "@mantine/core"
+import { Center, Image, Text, Title } from "@mantine/core"
 
-import { faker } from "@faker-js/faker"
+// import { faker } from "@faker-js/faker"
 
-const CatalogItem = () => {
+type Props = {
+  imagesrc:string,
+  name:string,
+  price:number
+}
+
+const CatalogItem = (p:Props) => {
+  const {imagesrc, name, price} = p
 
   return (
-    <Card shadow="sm" radius="md">
-      <Card.Section>
+    <div>
+      <Center>
         <Image
-          src={faker.image.urlLoremFlickr({ category: 'cats' })}
-          height={100}
+          src={imagesrc}
+          height={200}
+          maw={200}
+          radius={"xs"}
           alt="e"
         />
-      </Card.Section>
-      
-      <Title mt="xs" mb="xs" size="1rem" >{faker.person.firstName()}</Title>
-
-      <Text size="xs" c="dimmed" >
-        ₱{faker.number.float({ min: 10, max: 10000, precision: 0.01 })}
+      </Center>
+      <Title ta={"center"} mt="xs" mb="xs" size="1rem" >{name}</Title>
+      <Text ta={"center"} size="xs" c="dimmed" >
+        ₱{price}
       </Text>
-    </Card>
+    </div>
   )
 }
 
 export default CatalogItem
+
+/* faker.image.urlLoremFlickr({ category: 'cats' })
+faker.person.firstName()
+faker.number.float({ min: 10, max: 10000, precision: 0.01 }) */

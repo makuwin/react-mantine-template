@@ -18,6 +18,8 @@ npm install react-router-dom
 
 npm install @tabler/icons-react
 
+npm install pocketbase --save
+
 # For Tauri
 
 cargo tauri dev
