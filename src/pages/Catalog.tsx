@@ -1,4 +1,4 @@
-import { Button, SimpleGrid, Text } from "@mantine/core"
+import { Button, SimpleGrid } from "@mantine/core"
 import { CatalogItem } from "../components/ui";
 import { faker } from "@faker-js/faker"
 import { useGet } from "../components/hooks";
@@ -26,7 +26,7 @@ const Catalog = () => {
     <>
       <SimpleGrid
         cols={{ base: 2, sm: 3, lg: 8 }}
-        // spacing={{ base: 10, sm: 'xl' }}
+        spacing={{ base: 10, sm: 'md' }}
         verticalSpacing={{ base: 'md', sm: 'lg' }}
       >
         {
