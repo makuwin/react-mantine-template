@@ -1,5 +1,5 @@
-import { Button, SimpleGrid } from "@mantine/core"
-import { CatalogItem } from "../components/ui";
+import { Button, Grid, SimpleGrid} from "@mantine/core"
+import { CatalogItem, SearchableSelect } from "../components/ui";
 import { faker } from "@faker-js/faker"
 import { useGet } from "../components/hooks";
 import usePost from "../components/hooks/usePost";
@@ -22,20 +22,27 @@ const Catalog = () => {
     refetch()
   }
 
+  const catalogItems = data?.map(row => (
+    <CatalogItem name={row.name} price={row.price} imagesrc={row.imagesrc} key={row.id}/>
+  ))
+
   return (
     <>
-      <SimpleGrid
-        cols={{ base: 2, sm: 3, lg: 8 }}
-        spacing={{ base: 10, sm: 'md' }}
-        verticalSpacing={{ base: 'md', sm: 'lg' }}
-      >
-        {
-          data?.map(row => (
-            <CatalogItem name={row.name} price={row.price} imagesrc={row.imagesrc} key={row.id}/>
-          ))
-        }
-        <Button onClick={handleClick}>Press Me</Button>
-      </SimpleGrid>
+      <Grid>
+        <Grid.Col span={2}>
+          <SearchableSelect />
+        </Grid.Col>
+        <Grid.Col span={10}>
+          <SimpleGrid
+            cols={{ base: 2, sm: 3, lg: 8 }}
+            spacing={{ base: 10, sm: 'md' }}
+            verticalSpacing={{ base: 'md', sm: 'lg' }}
+          >
+            {catalogItems}
+            <Button onClick={handleClick}>Press Me</Button>
+          </SimpleGrid>
+        </Grid.Col>
+      </Grid>
     </>
   )
 }
