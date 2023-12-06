@@ -1,7 +1,7 @@
 import { PillsInput, Pill, Combobox, CheckIcon, Group, useCombobox } from '@mantine/core';
 import { useState } from 'react';
 
-const groceries = ['🍎 Apples', '🍌 Bananas', '🥦 Broccoli', '🥕 Carrots', '🍫 Chocolate'];
+const groceries = ['Apples', 'Bananas', 'Broccoli', 'Carrots', 'Chocolate'];
 
 const SearchableSelect = () => {
   const combobox = useCombobox({
@@ -12,10 +12,11 @@ const SearchableSelect = () => {
   const [search, setSearch] = useState('');
   const [value, setValue] = useState<string[]>([]);
 
-  const handleValueSelect = (val: string) =>
+  const handleValueSelect = (val: string) => {
     setValue((current) =>
       current.includes(val) ? current.filter((v) => v !== val) : [...current, val]
     );
+  }
 
   const handleValueRemove = (val: string) =>
     setValue((current) => current.filter((v) => v !== val));

@@ -17,6 +17,22 @@ const Home = () => {
     onConfirm: () => console.log('Confirmed'),
   });
 
+  const OpenDrawer = () => 
+    (
+      <>
+        <Drawer
+          opened={opened2}
+          onClose={close2}
+          title="Authentication"
+          overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+          >
+          {/* Drawer content */}
+        </Drawer>
+        <Button onClick={open2}>Open drawer</Button>
+      </>
+    )
+  
+
   const [opened, { open, close }] = useDisclosure(false);
 
   const [opened2, { open : open2, close : close2}] = useDisclosure(false);
@@ -41,16 +57,7 @@ const Home = () => {
       </Modal>
       <Button onClick={open}>Open centered Modal</Button> 
       <Space h={'md'}/>
-      <Drawer
-        opened={opened2}
-        onClose={close2}
-        title="Authentication"
-        overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
-      >
-        {/* Drawer content */}
-      </Drawer>
-
-      <Button onClick={open2}>Open drawer</Button>
+      <OpenDrawer/>
     </>
   )
 }
